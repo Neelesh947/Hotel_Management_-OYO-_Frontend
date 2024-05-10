@@ -1,0 +1,70 @@
+<div class="container">
+    <mat-card>
+        <mat-card-title>
+            <mat-card-content>
+                <h2 class="text"> Sign Up Here !!</h2>
+                <form [formGroup]="signupForm" (ngSubmit)="signUp()">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Name</mat-label>
+                        <input matInput formControlName="name" placeholder="Name" required>
+                        <mat-error *ngIf="signupForm.get('name')?.invalid && signupForm.get('name')?.touched">
+                            Please enter a valid name
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Username</mat-label>
+                        <input matInput formControlName="username" placeholder="username" required>
+                        <mat-error *ngIf="signupForm.get('username')?.invalid && signupForm.get('username')?.touched">
+                            Please enter a valid username
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input matInput formControlName="email" placeholder="Email" required>
+                        <mat-error *ngIf="signupForm.get('email')?.invalid && signupForm.get('email')?.touched">
+                            Please enter a valid Email
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input matInput type="password" formControlName="password" placeholder="password" required>
+                        <button mat-icon-button matSuffix (click)="togglePasswordVisibility()">
+                            <mat-icon>{{hidepassword?'visibility_off':'visibility'}}</mat-icon>
+                        </button>
+                        <mat-error *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched">
+                            Please enter a valid Password
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Confirm Password</mat-label>
+                        <input matInput formControlName="checkPassword" placeholder="Confirm Password" required>
+
+                        <button mat-icon-button matSuffix (click)="togglePasswordVisibility()">
+                            <mat-icon>{{hidepassword?'visibility_off':'visibility'}}</mat-icon>
+                        </button>
+                        <mat-error *ngIf="signupForm.get('checkPassword')?.invalid && signupForm.get('checkPassword')?.touched">
+                            Please enter a valid password
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Phone</mat-label>
+                        <input matInput formControlName="phone" placeholder="phone" required>
+                        <mat-error *ngIf="signupForm.get('phone')?.invalid && signupForm.get('phone')?.touched">
+                            Please enter a valid phone number
+                        </mat-error>
+                    </mat-form-field>
+
+                    <button mat-raised-button color="primary" type="submit" [disabled]="signupForm.invalid">SignUp</button>
+
+                    <p class="signin">Already account?<a href="login" > Login</a></p>
+
+                </form>
+            </mat-card-content>
+        </mat-card-title>
+    </mat-card>
+</div>

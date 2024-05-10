@@ -1,0 +1,47 @@
+<div *ngIf="!isAdminLoggedIn && !isCustomerLoggedIn">
+    <mat-toolbar class="custom-navbar">
+      <span class="navbar-title">Hotel Management System</span>
+      <span class="spacer"></span>
+      <div class="nav-link">
+        <a mat-button routerLink="#" routerLinkActive="active">Find the Hotel</a>
+        <a mat-button routerLink="sign-in" routerLinkActive="active">Sign Up</a>
+        <a mat-button routerLink="login" routerLinkActive="active">Login</a>
+        <a><button mat-button [matMenuTriggerFor]="menu">For Admin</button>
+            <mat-menu #menu="matMenu">
+            <a mat-menu-item href="admin-signup">sign-in</a>
+            <a mat-menu-item href="admin-login">Login</a>
+            </mat-menu>
+        </a>     
+      </div>
+  </mat-toolbar>
+</div>
+
+
+<div *ngIf="isAdminLoggedIn">
+  <mat-toolbar class="custom-navbar">
+    <span class="navbar-title">Admin Logged In</span>
+    <span class="spacer"></span>
+    <div class="nav-link">
+      <a mat-button routerLink="#" routerLinkActive="active">Dashboard</a>
+      <a mat-button routerLink="#" routerLinkActive="active"> Car</a>
+      <a mat-button routerLink="#" routerLinkActive="active"> Bookings</a>
+      <a mat-button routerLink="#" routerLinkActive="active"> Search</a>
+      <a mat-button (click)="logout()" routerLinkActive="active">Logout</a>
+    </div>
+  </mat-toolbar>
+</div>
+
+<div *ngIf="isCustomerLoggedIn">
+  <mat-toolbar class="custom-navbar">
+    <span class="navbar-title">Customer Logged In</span>
+    <span class="spacer"></span>
+    <div class="nav-link">
+      <a mat-button routerLink="#" routerLinkActive="active">Dashboard</a>
+      <a mat-button routerLink="#" routerLinkActive="active">My Bookings</a>
+      <a mat-button routerLink="#" routerLinkActive="active">Search</a>
+      <a mat-button (click)="logout()" routerLinkActive="active">Logout</a>
+    </div>
+  </mat-toolbar>
+</div>
+
+<router-outlet></router-outlet>

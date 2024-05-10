@@ -1,0 +1,61 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 50px;
+    height: 100vh;
+    background-color: rgba(47, 0, 255, 0.562);
+}
+
+mat-card{
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+
+    @media screen and (max-width:500px) {
+        max-width: 90%;
+    }
+}
+
+mat-card-title{
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+mat-form-field{
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+button{
+    width: 100%;
+}
+@media screen and (max-width:500px) {
+    mat-card-title{
+        font-size: 20px;
+    }
+    mat-form-field{
+        margin-bottom: 10px;
+    }
+}
+
+.error-snackbar{
+    background-color: #f44336 !important;
+}
+
+.text {
+    font-size: 20px;
+}
+
+.signin{
+    margin-top: 4px;
+    text-align: right;
+    font-size: 15px;
+}
