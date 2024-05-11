@@ -7,8 +7,8 @@
                     
                     <mat-form-field appearance="outline">
                         <mat-label>User Name</mat-label>
-                        <input matInput formControlName="email" placeholder="email" required>
-                        <mat-error *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+                        <input matInput formControlName="username" placeholder="username" required>
+                        <mat-error *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched">
                             Please enter a valid UserId
                         </mat-error>
                     </mat-form-field>
