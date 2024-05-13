@@ -22,6 +22,11 @@ import { AdminLoginComponent } from './pages/admin-login/admin-login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminHomeComponent } from './pages/admin/admin-home/admin-home.component';
 import { UserHomeComponent } from './pages/user/user-home/user-home.component';
+import { CategoryComponent } from './pages/admin/category/category.component';
+import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
+import { AnalyticsComponent } from './pages/admin/analytics/analytics.component';
+import { HotelComponent } from './pages/admin/hotel/hotel.component';
+import { SearchComponent } from './pages/admin/search/search.component';
 
 
 @NgModule({
@@ -33,7 +38,12 @@ import { UserHomeComponent } from './pages/user/user-home/user-home.component';
     AdminSignUpComponent,
     AdminLoginComponent,
     AdminHomeComponent,
-    UserHomeComponent
+    UserHomeComponent,
+    CategoryComponent,
+    DashboardComponent,
+    AnalyticsComponent,
+    HotelComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

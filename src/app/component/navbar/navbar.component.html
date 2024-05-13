@@ -22,9 +22,10 @@
     <span class="navbar-title">Admin Logged In</span>
     <span class="spacer"></span>
     <div class="nav-link">
-      <a mat-button routerLink="#" routerLinkActive="active">Dashboard</a>
+      <a mat-button routerLink="admin-home/dashboard" routerLinkActive="active">Dashboard</a>
       <a mat-button routerLink="#" routerLinkActive="active"> Analytics</a>
-      <a mat-button routerLink="#" routerLinkActive="active"> Hotel</a>
+      <a mat-button routerLink="admin-home/hotel" routerLinkActive="active"> Hotel</a>
+      <a mat-button routerLink="admin-home/category" routerLinkActive="active"> Add Category</a>
       <a mat-button routerLink="#" routerLinkActive="active"> Bookings</a>
       <a mat-button routerLink="#" routerLinkActive="active"> Search</a>
       <a mat-button (click)="logout()" routerLinkActive="active">Logout</a>

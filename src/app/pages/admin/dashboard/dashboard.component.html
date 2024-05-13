@@ -1,0 +1,27 @@
+<div style="background-color: #f8f8f8; min-height: 91vh;">
+    <div style="padding-top:10px;"></div>
+
+    <div style="margin-top: 10px;" class="child" *ngFor="let hotel of hotel">
+        <div class="row">
+            <div col span="8">
+                <img class="profile" style="height: 130px; width: 200px; border-radius: 10px;" 
+                        [src]="hotel.processedImg" alt="profile">
+            </div>
+
+            <div col span="6">
+                <h2 style="cursor: pointer; color: #108ee9;">
+                    {{hotel.name}}</h2>
+                <p>{{hotel.description}}</p>    
+
+                <hr>
+                <h5>Price :<b>${{hotel.price}}</b>  Type : - <b>{{hotel.dto.categoryName}}</b></h5>
+                
+                <hr>  
+                <div class="button">
+                    <button mat-raised-button color="primary">Update</button>
+                    <button mat-raised-button color="warn">Delete</button>
+                </div>  
+            </div>
+        </div>
+    </div>
+</div>

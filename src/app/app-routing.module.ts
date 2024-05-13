@@ -6,6 +6,9 @@ import { AdminLoginComponent } from './pages/admin-login/admin-login.component';
 import { AdminSignUpComponent } from './pages/admin-sign-up/admin-sign-up.component';
 import { UserHomeComponent } from './pages/user/user-home/user-home.component';
 import { AdminHomeComponent } from './pages/admin/admin-home/admin-home.component';
+import { CategoryComponent } from './pages/admin/category/category.component';
+import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
+import { HotelComponent } from './pages/admin/hotel/hotel.component';
 
 const routes: Routes = [
   {
@@ -36,7 +39,20 @@ const routes: Routes = [
   {
     path:"admin-home",
     component:AdminHomeComponent,
-    pathMatch:"full"
+    children:[
+      {
+        path:"dashboard",
+        component:DashboardComponent
+      },
+      {
+        path:"hotel",
+        component:HotelComponent
+      },
+      {
+        path:"category",
+        component:CategoryComponent
+      }
+    ]
   }
 ];
 

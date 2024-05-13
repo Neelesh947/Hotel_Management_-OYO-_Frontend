@@ -11,6 +11,33 @@ export class AdminService {
 
   constructor(private http:HttpClient) { }
 
+  public addCategory(category:any)
+  {
+    return this.http.post(`${base_url}/admin/create-category`,category,{
+      headers:this.createAuthorizationHeader()
+    });
+  }
+
+  public getAllCategory()
+  {
+    return this.http.get(`${base_url}/admin/category`,{
+      headers:this.createAuthorizationHeader()
+    });
+  }
+
+  public addHotel(hotelDto:any){
+    return this.http.post(`${base_url}/admin/create-hotel`,hotelDto,{
+      headers:this.createAuthorizationHeader()
+    });
+  }
+
+  public getAllHotelsWhichisAssociatedWithAdmin()
+  {
+    return this.http.get(`${base_url}/admin/hotel-list`,{
+      headers:this.createAuthorizationHeader()
+    });
+  }
+
   createAuthorizationHeader():HttpHeaders{
     let authHeaders:HttpHeaders=new HttpHeaders();
     return authHeaders.set(

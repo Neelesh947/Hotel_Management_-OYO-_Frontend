@@ -1,0 +1,49 @@
+<div class="container">
+    <mat-card>
+      <mat-card-title>
+        <h2 class="text">Post Car Here !!</h2>
+      </mat-card-title>
+      <mat-card-content>
+
+        <form [formGroup]="postHotelForm" (ngSubmit)="postHotel()">
+            <div class="file-upload-container">
+                <label class="file-upload-label">
+                    <span>Select a file</span>
+                    <input type="file" id="fileInput" (change)="onFileSelected($event)" hidden>
+                    <mat-icon>attach_file</mat-icon>
+                </label>   
+                <div *ngIf="selectedFile" class="image-preview">
+                    <div class="circle-image">
+                        <img [src]="imagePreview" alt="Selected Image" class="preview-image">
+                    </div>
+                </div>
+            </div>     
+    
+            <mat-form-field appearance="outline">
+                <mat-label>Enter Hotel Name</mat-label>
+                <input matInput formControlName="name" placeholder="Name" required>
+            </mat-form-field>
+      
+            <mat-form-field appearance="outline">
+                <mat-label>Price</mat-label>
+                <input matInput formControlName="price" placeholder="Enter price" required>
+              </mat-form-field>
+      
+            <mat-form-field appearance="outline">
+                <mat-label>Description</mat-label>
+                <input matInput formControlName="description" placeholder="Enter description" required>
+            </mat-form-field>
+      
+            <mat-form-field appearance="outline">
+                <mat-label>Category</mat-label>
+                <mat-select formControlName="categoryId" placeholder="Select Category">
+                    <mat-option *ngFor="let category of category" [value]="category.categoryId">{{ category.name }}</mat-option>
+                  </mat-select>
+            </mat-form-field>
+
+            <button mat-raised-button color="primary" type="submit" [disabled]="postHotelForm.invalid">Post Hotel</button>
+        </form>
+        
+      </mat-card-content>
+    </mat-card>
+</div>
