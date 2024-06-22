@@ -1,0 +1,34 @@
+<table class="booking-table">
+    <thead>
+      <tr>
+        <th>Booking Id</th>        
+        <th>Days</th>
+        <th>From Date</th>
+        <th>Price</th>
+        <th>To Date</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let booking of hotels">
+        <td>{{ booking.bookingId }}</td>
+        <td>{{ booking.days }}</td>
+        <td>{{ booking.fromDate | date:'dd/MM/yyyy' }}</td>
+        <td>{{ booking.price }}</td>
+        <td>{{ booking.toDate | date:'dd/MM/yyyy' }}</td>          
+        <td><strong [ngStyle]="{'color': booking.bookHotelStatus==='APPROVED' ? 'green' : booking.bookHotelStatus==='REJECTED' ? 'blue' : 'red'}">
+            {{ booking.bookHotelStatus }}</strong></td>        
+            
+        <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef>Action</th>
+            <td mat-cell *matCellDef="let myOrders">
+                <span *ngIf="myOrders.orderStatus== 'DELIVERED'">
+                    <button mat-raised-button color="primary" type="submit"
+                        routerLink="/user-dashboard/my-order/{{myOrders.orderId}}" >Review</button>
+                </span>
+            </td>      
+        </ng-container>
+      </tr>
+    </tbody>
+  </table>
+  

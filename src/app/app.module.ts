@@ -27,7 +27,17 @@ import { DashboardComponent } from './pages/admin/dashboard/dashboard.component'
 import { AnalyticsComponent } from './pages/admin/analytics/analytics.component';
 import { HotelComponent } from './pages/admin/hotel/hotel.component';
 import { SearchComponent } from './pages/admin/search/search.component';
-
+import { HomeDashboardComponent } from './pages/home/home-dashboard/home-dashboard.component';
+import { FindAHotelComponent } from './pages/home/find-a-hotel/find-a-hotel.component';
+import { HotelDetailsComponent } from './pages/home/hotel-details/hotel-details.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
+import { MyBookingsComponent } from './pages/user/my-bookings/my-bookings.component';
+import { BookHotelComponent } from './pages/user/book-hotel/book-hotel.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {provideNativeDateAdapter} from '@angular/material/core';
+import {MatTableModule} from '@angular/material/table';
+import { BookingsComponent } from './pages/admin/bookings/bookings.component';
 
 @NgModule({
   declarations: [
@@ -43,17 +53,25 @@ import { SearchComponent } from './pages/admin/search/search.component';
     DashboardComponent,
     AnalyticsComponent,
     HotelComponent,
-    SearchComponent
+    SearchComponent,
+    HomeDashboardComponent,
+    FindAHotelComponent,
+    HotelDetailsComponent,
+    UserDashboardComponent,
+    MyBookingsComponent,
+    BookHotelComponent,
+    BookingsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,MatCardModule,MatToolbarModule,
     FormsModule,MatFormFieldModule,MatIconModule,ReactiveFormsModule,
     MatInputModule,MatButtonModule,MatSnackBarModule,MatSelectModule,
-    MatMenuModule,HttpClientModule 
+    MatMenuModule,HttpClientModule ,MatDialogModule,MatDatepickerModule,
+    MatTableModule
   ],
   providers: [
-    provideAnimationsAsync()
+    provideAnimationsAsync(),provideNativeDateAdapter()
   ],
   bootstrap: [AppComponent]
 })

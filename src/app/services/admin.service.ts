@@ -38,6 +38,12 @@ export class AdminService {
     });
   }
 
+  public getMyBookings(userId:String){
+    return this.http.get(`${base_url}/admin/hotel/booking/`+ userId,{
+      headers:this.createAuthorizationHeader()
+    });
+  }
+
   createAuthorizationHeader():HttpHeaders{
     let authHeaders:HttpHeaders=new HttpHeaders();
     return authHeaders.set(

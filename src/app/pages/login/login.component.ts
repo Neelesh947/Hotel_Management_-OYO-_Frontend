@@ -49,7 +49,7 @@ export class LoginComponent {
             this.router.navigateByUrl("admin-home")
           }else if(StorageService.isUserLoggedIn())
           {
-            this.router.navigateByUrl("user-home")
+            this.router.navigateByUrl("user-home/dashboard")
           }
           else{
             this.snack.open("BAD CREDENTIALS","ok",{duration:3000})

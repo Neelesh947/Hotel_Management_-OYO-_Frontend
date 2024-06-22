@@ -3,7 +3,8 @@
       <span class="navbar-title">Hotel Management System</span>
       <span class="spacer"></span>
       <div class="nav-link">
-        <a mat-button routerLink="#" routerLinkActive="active">Find the Hotel</a>
+        <a mat-button routerLink="Home" routerLinkActive="active">Home</a>
+        <a mat-button routerLink="find-a-hotel" routerLinkActive="active">Find the Hotel</a>
         <a mat-button routerLink="sign-in" routerLinkActive="active">Sign Up</a>
         <a mat-button routerLink="login" routerLinkActive="active">Login</a>
         <a><button mat-button [matMenuTriggerFor]="menu">For Admin</button>
@@ -26,7 +27,7 @@
       <a mat-button routerLink="#" routerLinkActive="active"> Analytics</a>
       <a mat-button routerLink="admin-home/hotel" routerLinkActive="active"> Hotel</a>
       <a mat-button routerLink="admin-home/category" routerLinkActive="active"> Add Category</a>
-      <a mat-button routerLink="#" routerLinkActive="active"> Bookings</a>
+      <a mat-button routerLink="admin-home/bookings" routerLinkActive="active"> Bookings</a>
       <a mat-button routerLink="#" routerLinkActive="active"> Search</a>
       <a mat-button (click)="logout()" routerLinkActive="active">Logout</a>
     </div>
@@ -38,9 +39,9 @@
     <span class="navbar-title">Customer Logged In</span>
     <span class="spacer"></span>
     <div class="nav-link">
-      <a mat-button routerLink="#" routerLinkActive="active">Dashboard</a>
-      <a mat-button routerLink="#" routerLinkActive="active">My Bookings</a>
-      <a mat-button routerLink="#" routerLinkActive="active">Search</a>
+      <a mat-button routerLink="user-home/dashboard" routerLinkActive="active">Dashboard</a>
+      <a mat-button routerLink="user-home/bookings" routerLinkActive="active">My Bookings</a>
+      <a mat-button routerLink="user-home/search" routerLinkActive="active">Search</a>
       <a mat-button (click)="logout()" routerLinkActive="active">Logout</a>
     </div>
   </mat-toolbar>

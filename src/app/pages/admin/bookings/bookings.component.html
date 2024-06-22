@@ -1,0 +1,33 @@
+<table class="booking-table">
+    <thead>
+      <tr>
+        <th>Booking Id</th>        
+        <th>Days</th>
+        <th>From Date</th>
+        <th>Price</th>
+        <th>To Date</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let booking of hotels">
+        <td>{{ booking.bookingId }}</td>
+        <td>{{ booking.days }}</td>
+        <td>{{ booking.fromDate | date:'dd/MM/yyyy' }}</td>
+        <td>{{ booking.price }}</td>
+        <td>{{ booking.toDate | date:'dd/MM/yyyy' }}</td>          
+        <td><strong [ngStyle]="{'color': booking.bookHotelStatus==='APPROVED' ? 'green' : booking.bookHotelStatus==='REJECTED' ? 'blue' : 'red'}">
+            {{ booking.bookHotelStatus }}</strong></td>        
+            
+            <td>
+                <span *ngIf="booking.bookHotelStatus=='PENDING'">
+                    <button style="margin-left: 10px;" mat-button color="primary"
+                            (click)="changebookingstatus(booking.id,'APPROVE')">APPROVE</button>
+                    <button mat-button color="warn"
+                            (click)="changebookingstatus(booking.id,'REJECT')">REJECT</button>
+                </span>
+            </td>            
+      </tr>
+    </tbody>
+  </table>
+  

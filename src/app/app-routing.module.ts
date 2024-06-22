@@ -9,8 +9,25 @@ import { AdminHomeComponent } from './pages/admin/admin-home/admin-home.componen
 import { CategoryComponent } from './pages/admin/category/category.component';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { HotelComponent } from './pages/admin/hotel/hotel.component';
+import { HomeDashboardComponent } from './pages/home/home-dashboard/home-dashboard.component';
+import { FindAHotelComponent } from './pages/home/find-a-hotel/find-a-hotel.component';
+import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
+import { MyBookingsComponent } from './pages/user/my-bookings/my-bookings.component';
+import { SearchComponent } from './pages/admin/search/search.component';
+import { BookHotelComponent } from './pages/user/book-hotel/book-hotel.component';
+import { BookingsComponent } from './pages/admin/bookings/bookings.component';
 
 const routes: Routes = [
+  {
+    path:"Home",
+    component:HomeDashboardComponent,
+    pathMatch:"full"
+  },
+  {
+    path:"find-a-hotel",
+    component:FindAHotelComponent,
+    pathMatch:"full"
+  },
   {
     path:"login",
     component:LoginComponent,
@@ -34,7 +51,24 @@ const routes: Routes = [
   {
     path:"user-home",
     component:UserHomeComponent,
-    pathMatch:"full"
+    children:[
+      {
+        path:"dashboard",
+        component:UserDashboardComponent
+      },
+      {
+        path:"bookings",
+        component:MyBookingsComponent
+      },
+      {
+        path:"search",
+        component:SearchComponent
+      },
+      {
+        path:"bookHotel/:id",
+        component:BookHotelComponent
+      },
+    ]
   },
   {
     path:"admin-home",
@@ -51,6 +85,10 @@ const routes: Routes = [
       {
         path:"category",
         component:CategoryComponent
+      },
+      {
+        path:"bookings",
+        component:BookingsComponent
       }
     ]
   }
